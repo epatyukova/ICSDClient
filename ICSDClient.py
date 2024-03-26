@@ -108,7 +108,7 @@ class ICSDClient():
             icsd_code = re.search(r"_database_code_ICSD ([0-9]+)", cif).group(1)
             filename = f"icsd_{int(icsd_code):06}.cif"
 
-            with open(os.path.join(folder, filename), "w") as f:
+            with open(os.path.join(folder, filename), "w", encoding='utf-8') as f:
                 for line in cif.splitlines():
                     f.write(line + "\n")
 
